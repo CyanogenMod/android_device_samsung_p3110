@@ -20,5 +20,11 @@ LOCAL_PATH := device/samsung/p3110
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Audio
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/default_gain.conf:system/etc/default_gain.conf \
+	$(LOCAL_PATH)/configs/tinyucm.conf:system/etc/tinyucm.conf \
+	$(LOCAL_PATH)/configs/Volume.db:system/etc/Volume.db
+
 # Use the non-open-source parts, if they're present
 $(call inherit-product, vendor/samsung/p31xx/p3110-vendor.mk)
