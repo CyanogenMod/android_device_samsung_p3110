@@ -22,9 +22,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Audio
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/default_gain.conf:system/etc/default_gain.conf \
-	$(LOCAL_PATH)/configs/tinyucm.conf:system/etc/tinyucm.conf \
-	$(LOCAL_PATH)/configs/Volume.db:system/etc/Volume.db
+	$(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/espressowifi \
+	$(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Use the non-open-source parts, if they're present
 $(call inherit-product, vendor/samsung/p31xx/p3110-vendor.mk)
