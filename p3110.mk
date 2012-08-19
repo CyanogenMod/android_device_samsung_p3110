@@ -27,4 +27,4 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/Volume.db:system/etc/Volume.db
 
 # Use the non-open-source parts, if they're present
-$(call inherit-product, vendor/samsung/p31xx/p3110-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/p31xx/p3110-vendor.mk)
