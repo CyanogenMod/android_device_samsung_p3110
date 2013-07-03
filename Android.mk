@@ -24,6 +24,8 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),p3110)
 
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
 COMMON_P31XX_DIRS := audio camerawrapper liblights
 include $(foreach common_dirs,$(COMMON_P31XX_DIRS),device/samsung/p3100/$(common_dirs)/Android.mk)
 
