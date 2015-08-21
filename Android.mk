@@ -26,7 +26,4 @@ ifeq ($(TARGET_DEVICE),p3110)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
-COMMON_P31XX_DIRS := audio
-include $(foreach common_dirs,$(COMMON_P31XX_DIRS),device/samsung/p3100/$(common_dirs)/Android.mk)
-
 endif
