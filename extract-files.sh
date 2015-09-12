@@ -18,9 +18,7 @@
 
 VENDOR=samsung
 COMMON=p31xx
-DEVICE=p3110
 COMMONBASE=../../../vendor/$VENDOR/$COMMON/common
-DEVICEBASE=../../../vendor/$VENDOR/$COMMON/$DEVICE
 
 echo "Pulling common files..."
 for FILE in `cat ../p3100/proprietary-common-files.txt | grep -v ^# | grep -v ^$`; do
@@ -29,15 +27,6 @@ for FILE in `cat ../p3100/proprietary-common-files.txt | grep -v ^# | grep -v ^$
         mkdir -p $COMMONBASE/$DIR
     fi
     adb pull /$FILE $COMMONBASE/$FILE
-done
-
-echo "Pulling device specific files..."
-for FILE in `cat proprietary-$DEVICE-files.txt | grep -v ^# | grep -v ^$`; do
-    DIR=`dirname $FILE`
-    if [ ! -d $DEVICEBASE/$DIR ]; then
-        mkdir -p $DEVICEBASE/$DIR
-    fi
-    adb pull /$FILE $DEVICEBASE/$FILE
 done
 
 ./setup-makefiles.sh
