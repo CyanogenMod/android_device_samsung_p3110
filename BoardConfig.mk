@@ -14,14 +14,16 @@
 # limitations under the License.
 #
 
-# Include p31xx BoardConfigCommon
--include device/samsung/p3100/BoardConfigCommon.mk
+# Include common espresso BoardConfigCommon
+-include device/samsung/espresso-common/BoardConfigCommon.mk
 
 TARGET_BOARD_INFO_FILE := device/samsung/p3110/board-info.txt
 
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/espresso10
 TARGET_KERNEL_CONFIG := cyanogenmod_p3110_defconfig
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := p3110,GT-P3110,p3113,GT-P3113,espressowifi,espressowifixx
+
+# Use the non-open-source parts, if they're present
+-include vendor/samsung/p31xx/BoardConfigVendor.mk

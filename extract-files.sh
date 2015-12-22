@@ -21,7 +21,7 @@ COMMON=p31xx
 COMMONBASE=../../../vendor/$VENDOR/$COMMON/common
 
 echo "Pulling common files..."
-for FILE in `cat ../p3100/proprietary-common-files.txt | grep -v ^# | grep -v ^$`; do
+for FILE in `cat ../espresso-common/proprietary-p31xx-files.txt | grep -v ^# | grep -v ^$`; do
     DIR=`dirname $FILE`
     if [ ! -d $COMMONBASE/$DIR ]; then
         mkdir -p $COMMONBASE/$DIR
