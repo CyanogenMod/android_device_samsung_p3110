@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,28 +21,19 @@ PRODUCT_RELEASE_NAME := p3110
 TARGET_SCREEN_HEIGHT := 1024
 TARGET_SCREEN_WIDTH := 600
 
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.carrier=wifi-only
-
-# Inherit some common CM stuff.
+# Inherit common CM configuration
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/samsung/p3110/full_p3110.mk)
 
 # CyanogenMod specific overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/espresso-common/overlay/cm-common
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := p3110
-PRODUCT_NAME := cm_p3110
-PRODUCT_BRAND := samsung
-PRODUCT_MODEL := GT-P3110
-PRODUCT_MANUFACTURER := samsung
+# Inherit device configuration
+$(call inherit-product, device/samsung/p3110/aosp_p3110.mk)
 
-#Set build fingerprint / ID / Prduct Name ect.
+# Device identifier. This must come after all inclusions
+PRODUCT_NAME := cm_p3110
+
+# Set build fingerprint / ID / Product Name etc.
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=espressowifixx \
-    TARGET_DEVICE=espressowifi \
     BUILD_FINGERPRINT="samsung/espressowifixx/espressowifi:4.2.2/JDQ39/P3110XXDMH1:user/release-keys" \
     PRIVATE_BUILD_DESC="espressowifixx-user 4.2.2 JDQ39 P3110XXDMH1 release-keys"
