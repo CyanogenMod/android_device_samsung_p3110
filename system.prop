@@ -1,5 +1,4 @@
 #
 # system.prop for p3110
 #
-ro.sf.lcd_density=160
 ro.sf.hwrotation=270
