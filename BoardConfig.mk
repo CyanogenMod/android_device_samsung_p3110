@@ -23,7 +23,7 @@ TARGET_BOARD_INFO_FILE := device/samsung/p3110/board-info.txt
 TARGET_KERNEL_CONFIG := cyanogenmod_p3110_defconfig
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := espresso,p3110,GT-P3110,p3113,GT-P3113,espressowifi,espressowifixx
+TARGET_OTA_ASSERT_DEVICE := espresso-common,p3110,GT-P3110,p3113,GT-P3113,espressowifi,espressowifixx
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/p31xx/BoardConfigVendor.mk
