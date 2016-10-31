@@ -19,10 +19,14 @@ $(call inherit-product, device/samsung/espresso-common/device-common.mk)
 
 LOCAL_PATH := device/samsung/p3110
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay/aosp
-DEVICE_PACKAGE_OVERLAYS += device/samsung/espresso-common/overlay/aosp-p31xx
+# This is a wifi-only device
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carrier=wifi-only
 
-# Audio
+# Include wifi-only overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay/aosp
+
+# Audio Config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
