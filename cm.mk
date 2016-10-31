@@ -25,6 +25,7 @@ TARGET_SCREEN_WIDTH := 600
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # CyanogenMod specific overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/p3110/overlay/cm
 DEVICE_PACKAGE_OVERLAYS += device/samsung/espresso-common/overlay/cm-common
 
 # Inherit device configuration
